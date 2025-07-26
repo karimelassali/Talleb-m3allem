@@ -103,7 +103,7 @@ const translations = {
     contactUs: "Nous Contacter",
     safety: "Sécurité",
     contact: "Contact",
-    copyright: "© 2024 Tlob M3allem. Tous droits réservés.",
+    copyright: "© 2025 Tlob M3allem. Tous droits réservés.",
     disclaimer: "La plateforme connecte des entrepreneurs indépendants. Services soumis à disponibilité.",
   },
   darija: {
@@ -193,7 +193,7 @@ const translations = {
     contactUs: "اتصل بنا",
     safety: "الأمان",
     contact: "اتصال",
-    copyright: "© ٢٠٢٤ طالب معلم. جميع الحقوق محفوظة.",
+    copyright: "© 2025 طالب معلم. جميع الحقوق محفوظة.",
     disclaimer: "المنصة تربط المقاولين المستقلين. الخدمات تخضع للتوفر.",
   },
 }

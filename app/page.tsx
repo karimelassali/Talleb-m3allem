@@ -171,7 +171,7 @@ export default function LandingPage() {
               >
                 <motion.div
                   className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  whileHover={{ rotate: 360 }}
+ 
                   transition={{ duration: 0.5 }}
                 >
                   <step.icon className="h-10 w-10 text-orange-600" />
@@ -204,7 +204,7 @@ export default function LandingPage() {
                 <CardHeader className="text-center pb-6">
                   <motion.div
                     className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                    whileHover={{ rotate: 360 }}
+   
                     transition={{ duration: 0.5 }}
                   >
                     <Home className="h-8 w-8 text-blue-600" />
@@ -236,7 +236,7 @@ export default function LandingPage() {
                 <CardHeader className="text-center pb-6">
                   <motion.div
                     className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                    whileHover={{ rotate: 360 }}
+   
                     transition={{ duration: 0.5 }}
                   >
                     <Hammer className="h-8 w-8 text-orange-600" />
@@ -291,7 +291,7 @@ export default function LandingPage() {
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
                   <motion.div
                     className={`bg-${service.color}-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}
-                    whileHover={{ rotate: 360 }}
+   
                     transition={{ duration: 0.5 }}
                   >
                     <service.icon className={`h-8 w-8 text-${service.color}-600`} />
@@ -337,7 +337,7 @@ export default function LandingPage() {
               >
                 <motion.div
                   className="bg-orange-100 p-3 rounded-lg flex-shrink-0"
-                  whileHover={{ rotate: 360 }}
+ 
                   transition={{ duration: 0.5 }}
                 >
                   <feature.icon className="h-6 w-6 text-orange-600" />
