@@ -218,13 +218,13 @@ export default function LandingPage() {
                     {[t("postServiceRequests"), t("compareOffers"), t("rateReview")].map((item, index) => (
                       <motion.li
                         key={index}
-                        className="flex items-center space-x-3"
+                        className="flex items-center justify-between w-full"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                         <span>{item}</span>
+                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                       </motion.li>
                     ))}
                   </ul>
@@ -250,13 +250,13 @@ export default function LandingPage() {
                     {[t("createProfile"), t("browseJobs"), t("sendQuotes")].map((item, index) => (
                       <motion.li
                         key={index}
-                        className="flex items-center space-x-3"
+                        className="flex items-center justify-between w-full"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                         <span>{item}</span>
+                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                       </motion.li>
                     ))}
                   </ul>
