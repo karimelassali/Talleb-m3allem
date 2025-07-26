@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useLanguage } from "@/contexts/language-context"
+import { cn } from "@/lib/utils"
 import {
   Hammer,
   Wrench,
@@ -147,7 +148,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("howItWorks")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("howItWorksSubtitle")}</p>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("howItWorksSubtitle")}</p>
           </motion.div>
 
           <motion.div
@@ -177,7 +178,7 @@ export default function LandingPage() {
                   <step.icon className="h-10 w-10 text-orange-600" />
                 </motion.div>
                 <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground">{step.desc}</p>
+                <p className="text-foreground/80">{step.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -189,7 +190,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("builtForEveryone")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("builtForEveryoneSubtitle")}</p>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("builtForEveryoneSubtitle")}</p>
           </motion.div>
 
           <motion.div
@@ -210,7 +211,7 @@ export default function LandingPage() {
                     <Home className="h-8 w-8 text-blue-600" />
                   </motion.div>
                   <CardTitle className="text-2xl">{t("forCustomers")}</CardTitle>
-                  <CardDescription className="text-lg">{t("forCustomersDesc")}</CardDescription>
+                  <CardDescription className="text-lg text-foreground/80">{t("forCustomersDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -242,7 +243,7 @@ export default function LandingPage() {
                     <Hammer className="h-8 w-8 text-orange-600" />
                   </motion.div>
                   <CardTitle className="text-2xl">{t("forArtisans")}</CardTitle>
-                  <CardDescription className="text-lg">{t("forArtisansDesc")}</CardDescription>
+                  <CardDescription className="text-lg text-foreground/80">{t("forArtisansDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -271,7 +272,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("ourServices")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("ourServicesSubtitle")}</p>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("ourServicesSubtitle")}</p>
           </motion.div>
 
           <motion.div
@@ -297,7 +298,7 @@ export default function LandingPage() {
                     <service.icon className={`h-8 w-8 text-${service.color}-600`} />
                   </motion.div>
                   <h3 className="font-semibold mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground">{service.desc}</p>
+                  <p className="text-sm text-foreground/80">{service.desc}</p>
                 </Card>
               </motion.div>
             ))}
@@ -310,7 +311,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("keyFeatures")}</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("keyFeaturesSubtitle")}</p>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("keyFeaturesSubtitle")}</p>
           </motion.div>
 
           <motion.div
@@ -344,7 +345,7 @@ export default function LandingPage() {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.desc}</p>
+                  <p className="text-foreground/80">{feature.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -420,12 +421,12 @@ export default function LandingPage() {
                 <img src="/logo.jpeg" alt="Tlob M3allem Logo" className="h-8 w-8 object-contain" />
                 <span className="text-lg font-bold">Tlob M3allem</span>
               </div>
-              <p className="text-muted-foreground mb-4">{t("footerDesc")}</p>
+              <p className="text-foreground/80">{t("footerDesc")}</p>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <h3 className="font-semibold mb-4">{t("quickLinks")}</h3>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-foreground/80">
                 <motion.li whileHover={{ x: 5 }}>
                   <a href="#about" className="hover:text-primary transition-colors">
                     {t("aboutUs")}
@@ -446,7 +447,7 @@ export default function LandingPage() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
               <h3 className="font-semibold mb-4">{t("support")}</h3>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-foreground/80">
                 <motion.li whileHover={{ x: 5 }}>
                   <a href="#how-it-works" className="hover:text-primary transition-colors">
                     {t("faq")}
@@ -462,12 +463,24 @@ export default function LandingPage() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
               <h3 className="font-semibold mb-4">{t("contact")}</h3>
-              <div className="space-y-2 text-muted-foreground">
-                <motion.div className="flex items-center space-x-2" whileHover={{ x: 5 }}>
+              <div className="space-y-2 text-foreground/80">
+                <motion.div 
+                  className={cn(
+                    "flex items-center",
+                    language === 'darija' ? 'flex-row-reverse space-x-reverse' : 'space-x-2'
+                  )} 
+                  whileHover={{ x: 5 }}
+                >
                   <Mail className="h-4 w-4" />
                   <span>hello@Tlobm3allem.com</span>
                 </motion.div>
-                <motion.div className="flex items-center space-x-2" whileHover={{ x: 5 }}>
+                <motion.div 
+                  className={cn(
+                    "flex items-center",
+                    language === 'darija' ? 'flex-row-reverse space-x-reverse' : 'space-x-2'
+                  )} 
+                  whileHover={{ x: 5 }}
+                >
                   <Phone className="h-4 w-4" />
                   <span>+212 628-721159</span>
                 </motion.div>
@@ -476,7 +489,7 @@ export default function LandingPage() {
           </div>
 
           <motion.div
-            className="border-t mt-8 pt-8 text-center text-muted-foreground"
+            className="border-t mt-8 pt-8 text-center text-foreground/80"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
