@@ -89,7 +89,7 @@ export default function LandingPage() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 overflow-hidden">
+      <section id="about" className="py-20 lg:py-32 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -143,7 +143,7 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-muted/50">
+      <section id="how-it-works" className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("howItWorks")}</h2>
@@ -267,7 +267,7 @@ export default function LandingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-muted/50">
+      <section id="services" className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("ourServices")}</h2>
@@ -353,7 +353,7 @@ export default function LandingPage() {
       </section>
 
       {/* Early Access Signup Section */}
-      <section className="py-20 bg-orange-500 text-white">
+      <section id="contact" className="py-20 bg-orange-500 text-white">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-2xl mx-auto text-center" {...fadeInUp}>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("joinBeta")}</h2>
@@ -411,47 +411,52 @@ export default function LandingPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
+        id="footer"
       >
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
               <div className="flex items-center space-x-2 mb-4">
                 <img src="/logo.jpeg" alt="Tlob M3allem Logo" className="h-8 w-8 object-contain" />
                 <span className="text-lg font-bold">Tlob M3allem</span>
               </div>
               <p className="text-muted-foreground mb-4">{t("footerDesc")}</p>
-              <div className="flex space-x-4">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                  <motion.div key={index} whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
-                    <Icon className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer" />
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <h3 className="font-semibold mb-4">{t("quickLinks")}</h3>
               <ul className="space-y-2 text-muted-foreground">
-                {[t("aboutUs"), t("howItWorks"), t("ourServices"), t("pricing")].map((link, index) => (
-                  <motion.li key={index} whileHover={{ x: 5 }}>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      {link}
-                    </a>
-                  </motion.li>
-                ))}
+                <motion.li whileHover={{ x: 5 }}>
+                  <a href="#about" className="hover:text-primary transition-colors">
+                    {t("aboutUs")}
+                  </a>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }}>
+                  <a href="#how-it-works" className="hover:text-primary transition-colors">
+                    {t("howItWorks")}
+                  </a>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }}>
+                  <a href="#services" className="hover:text-primary transition-colors">
+                    {t("ourServices")}
+                  </a>
+                </motion.li>
               </ul>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
               <h3 className="font-semibold mb-4">{t("support")}</h3>
               <ul className="space-y-2 text-muted-foreground">
-                {[t("faq"), t("helpCenter"), t("contactUs"), t("safety")].map((link, index) => (
-                  <motion.li key={index} whileHover={{ x: 5 }}>
-                    <a href="#" className="hover:text-primary transition-colors">
-                      {link}
-                    </a>
-                  </motion.li>
-                ))}
+                <motion.li whileHover={{ x: 5 }}>
+                  <a href="#how-it-works" className="hover:text-primary transition-colors">
+                    {t("faq")}
+                  </a>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }}>
+                  <a href="#contact" className="hover:text-primary transition-colors">
+                    {t("contactUs")}
+                  </a>
+                </motion.li>
               </ul>
             </motion.div>
 
@@ -464,7 +469,7 @@ export default function LandingPage() {
                 </motion.div>
                 <motion.div className="flex items-center space-x-2" whileHover={{ x: 5 }}>
                   <Phone className="h-4 w-4" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+212 628-721159</span>
                 </motion.div>
               </div>
             </motion.div>
