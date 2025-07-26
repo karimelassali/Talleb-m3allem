@@ -309,13 +309,27 @@ export default function LandingPage() {
       {/* Key Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-16" {...fadeInUp}>
+          <motion.div 
+            className={cn(
+              "mb-16",
+              language === 'darija' ? 'text-right' : 'text-center'
+            )} 
+            {...fadeInUp}
+          >
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("keyFeatures")}</h2>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t("keyFeaturesSubtitle")}</p>
+            <p className={cn(
+              "text-xl text-foreground/80 max-w-2xl mx-auto",
+              language === 'darija' ? 'mr-auto' : 'mx-auto'
+            )}>
+              {t("keyFeaturesSubtitle")}
+            </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className={cn(
+              "grid md:grid-cols-2 lg:grid-cols-3 gap-8",
+              language === 'darija' ? 'text-right' : 'text-left'
+            )}
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -331,19 +345,28 @@ export default function LandingPage() {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-start space-x-4"
+                className={cn(
+                  "flex items-start",
+                  language === 'darija' ? 'flex-row-reverse' : 'space-x-4'
+                )}
                 variants={fadeInUp}
-                whileHover={{ x: 10 }}
+                whileHover={{ x: language === 'darija' ? -10 : 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div
-                  className="bg-orange-100 p-3 rounded-lg flex-shrink-0"
- 
+                  className={cn(
+                    "p-3 rounded-lg flex-shrink-0",
+                    language === 'darija' ? 'ml-4' : 'mr-4',
+                    "bg-orange-100"
+                  )}
                   transition={{ duration: 0.5 }}
                 >
                   <feature.icon className="h-6 w-6 text-orange-600" />
                 </motion.div>
-                <div>
+                <div className={cn(
+                  language === 'darija' ? 'text-right' : 'text-left',
+                  "w-full"
+                )}>
                   <h3 className="font-semibold mb-2">{feature.title}</h3>
                   <p className="text-foreground/80">{feature.desc}</p>
                 </div>
@@ -415,74 +438,77 @@ export default function LandingPage() {
         id="footer"
       >
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-              <div className="flex items-center space-x-2 mb-4">
+              <div className={cn(
+                "flex items-center",
+                language === 'darija' ? 'flex-row-reverse' : 'space-x-2'
+              )}>
                 <img src="/logo.jpeg" alt="Tlob M3allem Logo" className="h-8 w-8 object-contain" />
-                <span className="text-lg font-bold">Tlob M3allem</span>
+                <span className={cn("text-lg font-bold", language === 'darija' ? 'mr-2' : '')}>Tlob M3allem</span>
               </div>
-              <p className="text-foreground/80">{t("footerDesc")}</p>
+              <p className="text-foreground/80 mt-4">{t("footerDesc")}</p>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <h3 className="font-semibold mb-4">{t("quickLinks")}</h3>
-              <ul className="space-y-2 text-foreground/80">
-                <motion.li whileHover={{ x: 5 }}>
-                  <a href="#about" className="hover:text-primary transition-colors">
-                    {t("aboutUs")}
-                  </a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }}>
-                  <a href="#how-it-works" className="hover:text-primary transition-colors">
-                    {t("howItWorks")}
-                  </a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }}>
-                  <a href="#services" className="hover:text-primary transition-colors">
-                    {t("ourServices")}
-                  </a>
-                </motion.li>
+              <ul className="space-y-3">
+                {[
+                  { text: t("aboutUs"), href: "#about" },
+                  { text: t("howItWorks"), href: "#how-it-works" },
+                  { text: t("ourServices"), href: "#services" },
+                ].map((link, index) => (
+                  <motion.li 
+                    key={index}
+                    whileHover={{ x: language === 'darija' ? -5 : 5 }}
+                  >
+                    <a href={link.href} className="hover:text-primary transition-colors flex items-center">
+                      {language === 'darija' && <span className="ml-1">←</span>}
+                      <span>{link.text}</span>
+                      {language !== 'darija' && <span className="ml-1">→</span>}
+                    </a>
+                  </motion.li>
+                ))}
               </ul>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
               <h3 className="font-semibold mb-4">{t("support")}</h3>
-              <ul className="space-y-2 text-foreground/80">
-                <motion.li whileHover={{ x: 5 }}>
-                  <a href="#how-it-works" className="hover:text-primary transition-colors">
-                    {t("faq")}
-                  </a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }}>
-                  <a href="#contact" className="hover:text-primary transition-colors">
-                    {t("contactUs")}
-                  </a>
-                </motion.li>
+              <ul className="space-y-3">
+                {[
+                  { text: t("faq"), href: "#how-it-works" },
+                  { text: t("contactUs"), href: "#contact" },
+                ].map((link, index) => (
+                  <motion.li 
+                    key={index}
+                    whileHover={{ x: language === 'darija' ? -5 : 5 }}
+                  >
+                    <a href={link.href} className="hover:text-primary transition-colors flex items-center">
+                      {language === 'darija' && <span className="ml-1">←</span>}
+                      <span>{link.text}</span>
+                      {language !== 'darija' && <span className="ml-1">→</span>}
+                    </a>
+                  </motion.li>
+                ))}
               </ul>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
               <h3 className="font-semibold mb-4">{t("contact")}</h3>
-              <div className="space-y-2 text-foreground/80">
+              <div className="space-y-3">
                 <motion.div 
-                  className={cn(
-                    "flex items-center",
-                    language === 'darija' ? 'flex-row-reverse space-x-reverse' : 'space-x-2'
-                  )} 
-                  whileHover={{ x: 5 }}
+                  className="flex items-center justify-between w-full"
+                  whileHover={{ x: language === 'darija' ? -5 : 5 }}
                 >
-                  <Mail className="h-4 w-4" />
                   <span>hello@Tlobm3allem.com</span>
+                  <Mail className="h-4 w-4" />
                 </motion.div>
                 <motion.div 
-                  className={cn(
-                    "flex items-center",
-                    language === 'darija' ? 'flex-row-reverse space-x-reverse' : 'space-x-2'
-                  )} 
-                  whileHover={{ x: 5 }}
+                  className="flex items-center justify-between w-full"
+                  whileHover={{ x: language === 'darija' ? -5 : 5 }}
                 >
-                  <Phone className="h-4 w-4" />
                   <span>+212 628-721159</span>
+                  <Phone className="h-4 w-4" />
                 </motion.div>
               </div>
             </motion.div>
