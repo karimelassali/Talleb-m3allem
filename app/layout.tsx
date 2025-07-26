@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Tlob M3allem - Your Local Craftsmen, On Demand",
-    template: "%s | Tlob M3allem"
+    default: "طلب معلم - عندنا المعلم اللي بغيتي",
+    template: "%s | طلب معلم"
   },
-  description: "Connect with verified local artisans for all your home service needs. Find skilled professionals for plumbing, electrical work, carpentry, and more in your area.",
-  keywords: ["handyman", "home services", "local artisans", "home repair", "plumber", "electrician", "carpenter", "Morocco", "home improvement"],
+  description: "وصل أحسن المعلمين في بلادك. جيب المعلم اللي عندو الخبرة ولا المعلمة اللي بغيتي بسهولة وسرعة.",
+  keywords: ["معلم", "صناعي", "تعمير الدار", "سباك", "خراج", "نجار", "بلدي", "المغرب", "دار", "تعمير"],
   generator: 'Next.js',
   applicationName: 'Tlob M3allem',
   referrer: 'origin-when-cross-origin',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Tlob M3allem - Find Local Craftsmen & Home Service Professionals',
-    description: 'Connect with verified local artisans for all your home service needs in Morocco.',
+    title: 'طلب معلم - جيب المعلم اللي بغيتي بسهولة وسرعة',
+    description: 'وصل أحسن المعلمين في بلادك. جيب المعلم اللي عندو الخبرة ولا المعلمة اللي بغيتي.',
     url: 'https://tlob-m3allem.vercel.app',
     siteName: 'Tlob M3allem',
     images: [
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         alt: 'Tlob M3allem Logo',
       },
     ],
-    locale: 'fr_FR',
+    locale: 'ar_MA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tlob M3allem - Find Local Craftsmen & Home Service Professionals',
-    description: 'Connect with verified local artisans for all your home service needs in Morocco.',
+    title: 'طلب معلم - جيب المعلم اللي بغيتي بسهولة وسرعة',
+    description: 'وصل أحسن المعلمين في بلادك. جيب المعلم اللي عندو الخبرة ولا المعلمة اللي بغيتي.',
     creator: '@tlobm3allem',
     images: ['/logo.jpeg'],
   },
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
     yandex: 'your-yandex-verification-code',
   },
-  category: 'home services',
+  category: 'خدمة وتعليم',
 }
 
 export default function RootLayout({
